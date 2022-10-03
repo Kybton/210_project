@@ -111,5 +111,18 @@ namespace _210_project.Utilities
 
             return true;
         }
+
+        public static string generateStaticID(string last_id, string prefix, string padding = "D4")
+        {
+            // to store only numbers from the last id
+            string id = "";
+
+            for (int i = 0; i < last_id.Length; i++)
+                if (Char.IsDigit(last_id[i])) id += last_id[i];
+
+            id = prefix + (int.Parse(id) + 1).ToString(padding);
+
+            return id;
+        }
     }
 }

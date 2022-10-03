@@ -41,9 +41,11 @@
             this.categoryTxtBox = new System.Windows.Forms.TextBox();
             this.nosTxtBox = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.searchBtn = new System.Windows.Forms.Button();
             this.startDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.endDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.addBtn = new System.Windows.Forms.Button();
+            this.deleteBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gymClassesDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,10 +61,12 @@
             this.gymClassesDataGridView.RowTemplate.Height = 24;
             this.gymClassesDataGridView.Size = new System.Drawing.Size(757, 150);
             this.gymClassesDataGridView.TabIndex = 0;
+            this.gymClassesDataGridView.Click += new System.EventHandler(this.gymClassesDataGridView_Click);
             // 
             // updateBtn
             // 
-            this.updateBtn.Location = new System.Drawing.Point(438, 415);
+            this.updateBtn.Font = new System.Drawing.Font("Book Antiqua", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.updateBtn.Location = new System.Drawing.Point(157, 476);
             this.updateBtn.Name = "updateBtn";
             this.updateBtn.Size = new System.Drawing.Size(81, 35);
             this.updateBtn.TabIndex = 1;
@@ -73,82 +77,82 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Constantia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Book Antiqua", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(12, 200);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 18);
+            this.label1.Size = new System.Drawing.Size(69, 20);
             this.label1.TabIndex = 2;
             this.label1.Text = "Class ID:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Constantia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Book Antiqua", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(11, 243);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 18);
+            this.label2.Size = new System.Drawing.Size(38, 20);
             this.label2.TabIndex = 3;
             this.label2.Text = "Title";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Constantia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Book Antiqua", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(12, 288);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 18);
+            this.label3.Size = new System.Drawing.Size(70, 20);
             this.label3.TabIndex = 4;
             this.label3.Text = "Category";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Constantia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Book Antiqua", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(11, 338);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(130, 18);
+            this.label4.Size = new System.Drawing.Size(133, 20);
             this.label4.TabIndex = 5;
             this.label4.Text = "Number of Session";
             // 
             // classIDLbl
             // 
             this.classIDLbl.AutoSize = true;
-            this.classIDLbl.Font = new System.Drawing.Font("Constantia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.classIDLbl.Font = new System.Drawing.Font("Book Antiqua", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.classIDLbl.ForeColor = System.Drawing.Color.White;
             this.classIDLbl.Location = new System.Drawing.Point(83, 200);
             this.classIDLbl.Name = "classIDLbl";
-            this.classIDLbl.Size = new System.Drawing.Size(0, 18);
+            this.classIDLbl.Size = new System.Drawing.Size(0, 20);
             this.classIDLbl.TabIndex = 6;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Constantia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Book Antiqua", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(12, 382);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(73, 18);
+            this.label6.Size = new System.Drawing.Size(77, 20);
             this.label6.TabIndex = 7;
             this.label6.Text = "Start Date";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Constantia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Book Antiqua", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(11, 432);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(69, 18);
+            this.label7.Size = new System.Drawing.Size(72, 20);
             this.label7.TabIndex = 8;
             this.label7.Text = "End Date";
             // 
             // titleTxtBox
             // 
-            this.titleTxtBox.Font = new System.Drawing.Font("Constantia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleTxtBox.Font = new System.Drawing.Font("Book Antiqua", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titleTxtBox.Location = new System.Drawing.Point(157, 235);
             this.titleTxtBox.Name = "titleTxtBox";
             this.titleTxtBox.Size = new System.Drawing.Size(153, 26);
@@ -156,7 +160,7 @@
             // 
             // categoryTxtBox
             // 
-            this.categoryTxtBox.Font = new System.Drawing.Font("Constantia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.categoryTxtBox.Font = new System.Drawing.Font("Book Antiqua", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.categoryTxtBox.Location = new System.Drawing.Point(157, 280);
             this.categoryTxtBox.Name = "categoryTxtBox";
             this.categoryTxtBox.Size = new System.Drawing.Size(153, 26);
@@ -164,7 +168,7 @@
             // 
             // nosTxtBox
             // 
-            this.nosTxtBox.Font = new System.Drawing.Font("Constantia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nosTxtBox.Font = new System.Drawing.Font("Book Antiqua", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nosTxtBox.Location = new System.Drawing.Point(157, 330);
             this.nosTxtBox.Name = "nosTxtBox";
             this.nosTxtBox.Size = new System.Drawing.Size(153, 26);
@@ -172,44 +176,72 @@
             // 
             // textBox6
             // 
-            this.textBox6.Font = new System.Drawing.Font("Constantia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox6.Font = new System.Drawing.Font("Book Antiqua", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox6.Location = new System.Drawing.Point(438, 192);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(153, 26);
             this.textBox6.TabIndex = 14;
             // 
-            // button2
+            // searchBtn
             // 
-            this.button2.Location = new System.Drawing.Point(622, 177);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(81, 41);
-            this.button2.TabIndex = 15;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.searchBtn.Font = new System.Drawing.Font("Book Antiqua", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchBtn.Location = new System.Drawing.Point(622, 177);
+            this.searchBtn.Name = "searchBtn";
+            this.searchBtn.Size = new System.Drawing.Size(81, 41);
+            this.searchBtn.TabIndex = 15;
+            this.searchBtn.Text = "Search";
+            this.searchBtn.UseVisualStyleBackColor = true;
+            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
             // 
             // startDateTimePicker
             // 
+            this.startDateTimePicker.Font = new System.Drawing.Font("Book Antiqua", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.startDateTimePicker.Location = new System.Drawing.Point(157, 382);
             this.startDateTimePicker.Name = "startDateTimePicker";
-            this.startDateTimePicker.Size = new System.Drawing.Size(234, 22);
+            this.startDateTimePicker.Size = new System.Drawing.Size(234, 26);
             this.startDateTimePicker.TabIndex = 16;
             // 
             // endDateTimePicker
             // 
+            this.endDateTimePicker.Font = new System.Drawing.Font("Book Antiqua", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.endDateTimePicker.Location = new System.Drawing.Point(157, 428);
             this.endDateTimePicker.Name = "endDateTimePicker";
-            this.endDateTimePicker.Size = new System.Drawing.Size(234, 22);
+            this.endDateTimePicker.Size = new System.Drawing.Size(234, 26);
             this.endDateTimePicker.TabIndex = 17;
+            // 
+            // addBtn
+            // 
+            this.addBtn.Font = new System.Drawing.Font("Book Antiqua", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addBtn.Location = new System.Drawing.Point(425, 419);
+            this.addBtn.Name = "addBtn";
+            this.addBtn.Size = new System.Drawing.Size(127, 35);
+            this.addBtn.TabIndex = 18;
+            this.addBtn.Text = "Add New";
+            this.addBtn.UseVisualStyleBackColor = true;
+            this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
+            // 
+            // deleteBtn
+            // 
+            this.deleteBtn.Font = new System.Drawing.Font("Book Antiqua", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteBtn.Location = new System.Drawing.Point(270, 476);
+            this.deleteBtn.Name = "deleteBtn";
+            this.deleteBtn.Size = new System.Drawing.Size(81, 35);
+            this.deleteBtn.TabIndex = 19;
+            this.deleteBtn.Text = "Delete";
+            this.deleteBtn.UseVisualStyleBackColor = true;
+            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
             // 
             // gymClass
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
-            this.ClientSize = new System.Drawing.Size(818, 499);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(36)))), ((int)(((byte)(48)))));
+            this.ClientSize = new System.Drawing.Size(818, 546);
+            this.Controls.Add(this.deleteBtn);
+            this.Controls.Add(this.addBtn);
             this.Controls.Add(this.endDateTimePicker);
             this.Controls.Add(this.startDateTimePicker);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.searchBtn);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.nosTxtBox);
             this.Controls.Add(this.categoryTxtBox);
@@ -224,6 +256,7 @@
             this.Controls.Add(this.updateBtn);
             this.Controls.Add(this.gymClassesDataGridView);
             this.Name = "gymClass";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "gymClass";
             this.Load += new System.EventHandler(this.gymClass_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gymClassesDataGridView)).EndInit();
@@ -247,8 +280,10 @@
         private System.Windows.Forms.TextBox categoryTxtBox;
         private System.Windows.Forms.TextBox nosTxtBox;
         private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button searchBtn;
         private System.Windows.Forms.DateTimePicker startDateTimePicker;
         private System.Windows.Forms.DateTimePicker endDateTimePicker;
+        private System.Windows.Forms.Button addBtn;
+        private System.Windows.Forms.Button deleteBtn;
     }
 }

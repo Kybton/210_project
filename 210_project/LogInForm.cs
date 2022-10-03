@@ -87,22 +87,12 @@ namespace _210_project
                 SqlConnection connection = new SqlConnection(Utility.connection);
                 SqlCommand command = connection.CreateCommand();
                 command.CommandType = CommandType.Text;
-                
-                // error catching point for any possible runtime query erorrs
-                try
-                {
-                    command.CommandText = "SELECT 1 FROM " + table + " WHERE username = '" + usernameTxtBox.Text + "' AND password = '" + passwordTxtBox.Text + "'";
-                    connection.Open();
-                    command.ExecuteNonQuery();
-                    connection.Close();
-                    SqlDataAdapter adapter = new SqlDataAdapter(command);
-                    adapter.Fill(dt);
-                }
-                catch (Exception errorMessage)
-                {
-                    MessageBox.Show(errorMessage.Message);
-                    return;
-                }
+                command.CommandText = "SELECT 1 FROM " + table + " WHERE username = '" + usernameTxtBox.Text + "' AND password = '" + passwordTxtBox.Text + "'";
+                connection.Open();
+                command.ExecuteNonQuery();
+                connection.Close();
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                adapter.Fill(dt);
 
                 if (dt.Rows.Count > 0)
                 {
@@ -113,9 +103,6 @@ namespace _210_project
                         Settings.Default.username = usernameTxtBox.Text;
                         Settings.Default.role = table;
                         Settings.Default.Save();
-                        // Settings.Default.Reload();
-                        // Settings.Default.Upgrade();
-                        // Application.Restart();
                     }
 
                     if (table.Equals("admin"))
