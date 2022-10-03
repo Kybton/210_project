@@ -47,7 +47,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(207, 535);
+            this.panel1.Size = new System.Drawing.Size(181, 535);
             this.panel1.TabIndex = 0;
             // 
             // logOutBtn
@@ -58,7 +58,7 @@
             this.logOutBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.logOutBtn.Location = new System.Drawing.Point(0, 493);
             this.logOutBtn.Name = "logOutBtn";
-            this.logOutBtn.Size = new System.Drawing.Size(207, 42);
+            this.logOutBtn.Size = new System.Drawing.Size(181, 42);
             this.logOutBtn.TabIndex = 3;
             this.logOutBtn.Text = "Log Out";
             this.logOutBtn.UseVisualStyleBackColor = false;
@@ -75,7 +75,7 @@
             this.classBtn.Location = new System.Drawing.Point(0, 97);
             this.classBtn.Name = "classBtn";
             this.classBtn.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.classBtn.Size = new System.Drawing.Size(207, 50);
+            this.classBtn.Size = new System.Drawing.Size(181, 50);
             this.classBtn.TabIndex = 3;
             this.classBtn.Text = "Gym Classes";
             this.classBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -88,16 +88,16 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(207, 97);
+            this.panel3.Size = new System.Drawing.Size(181, 97);
             this.panel3.TabIndex = 2;
             // 
             // childFormPanel
             // 
             this.childFormPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.childFormPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.childFormPanel.Location = new System.Drawing.Point(207, 0);
+            this.childFormPanel.Location = new System.Drawing.Point(181, 0);
             this.childFormPanel.Name = "childFormPanel";
-            this.childFormPanel.Size = new System.Drawing.Size(714, 535);
+            this.childFormPanel.Size = new System.Drawing.Size(740, 535);
             this.childFormPanel.TabIndex = 2;
             // 
             // formAdminMainMenu

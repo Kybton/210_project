@@ -57,9 +57,8 @@
             this.classIDLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(235)))), ((int)(((byte)(251)))));
             this.classIDLbl.Location = new System.Drawing.Point(301, 91);
             this.classIDLbl.Name = "classIDLbl";
-            this.classIDLbl.Size = new System.Drawing.Size(73, 22);
+            this.classIDLbl.Size = new System.Drawing.Size(0, 22);
             this.classIDLbl.TabIndex = 1;
-            this.classIDLbl.Text = "Class ID";
             // 
             // label2
             // 
@@ -133,7 +132,8 @@
             // 
             // insertBtn
             // 
-            this.insertBtn.Location = new System.Drawing.Point(366, 493);
+            this.insertBtn.Font = new System.Drawing.Font("Book Antiqua", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.insertBtn.Location = new System.Drawing.Point(366, 463);
             this.insertBtn.Name = "insertBtn";
             this.insertBtn.Size = new System.Drawing.Size(90, 33);
             this.insertBtn.TabIndex = 12;
@@ -146,7 +146,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(36)))), ((int)(((byte)(48)))));
-            this.ClientSize = new System.Drawing.Size(651, 583);
+            this.ClientSize = new System.Drawing.Size(651, 533);
             this.Controls.Add(this.insertBtn);
             this.Controls.Add(this.endDateTimePicker);
             this.Controls.Add(this.startDateTimePicker);
