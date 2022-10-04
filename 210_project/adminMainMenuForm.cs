@@ -54,5 +54,15 @@ namespace _210_project
         {
             openChildForm(new gymClass());
         }
+
+        private void userBtn_Click(object sender, EventArgs e)
+        {
+            openChildForm(new userManagement());
+        }
+
+        private void trainerBtn_Click(object sender, EventArgs e)
+        {
+            openChildForm(new trainerManagementForm());
+        }
     }
 }

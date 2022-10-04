@@ -127,6 +127,12 @@ namespace _210_project
 
             class_id = Utility.generateStaticID(class_id, "Class-");
             classIDLbl.Text = class_id;
+            titleTxtBox.ForeColor = grey;
+            titleTxtBox.Text = "Title";
+            categoryTxtBox.ForeColor = grey;
+            categoryTxtBox.Text = "Category";
+            nosTxtBox.ForeColor = grey;
+            nosTxtBox.Text = "Number of Session";
             insertUpdate(null, null);
         }
     }

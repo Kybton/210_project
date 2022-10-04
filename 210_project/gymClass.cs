@@ -124,6 +124,10 @@ namespace _210_project
                 case "Category":
                     command.CommandText += "category LIKE '%" + searchTxtBox.Text + "%'";
                     break;
+
+                case "Session":
+                    command.CommandText += "number_of_session BETWEEN " + (int.Parse(nosTxtBox.Text) - 5) + " AND " + (int.Parse(nosTxtBox.Text) + 5);
+                    break;
             }
 
             connection.Open();

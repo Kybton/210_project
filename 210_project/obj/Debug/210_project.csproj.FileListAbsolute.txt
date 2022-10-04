@@ -29,3 +29,6 @@ E:\210_project\210_project\bin\Debug\Microsoft.VisualBasic.PowerPacks.Vs.dll
 E:\210_project\210_project\obj\Debug\210_project.csproj.CopyComplete
 E:\210_project\210_project\obj\Debug\_210_project.gymClass.resources
 E:\210_project\210_project\obj\Debug\_210_project.classAdd.resources
+E:\210_project\210_project\obj\Debug\_210_project.userManagement.resources
+E:\210_project\210_project\obj\Debug\_210_project.trainerManagementForm.resources
+E:\210_project\210_project\obj\Debug\_210_project.trainerAdd.resources
