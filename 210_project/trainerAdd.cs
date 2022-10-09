@@ -45,15 +45,14 @@ namespace _210_project
 
             try
             {
-                SqlConnection connection = new SqlConnection(Utility.connection);
-                SqlCommand command = connection.CreateCommand();
+                SqlCommand command = Utility.connection.CreateCommand();
                 command.CommandType = CommandType.Text;
                 command.CommandText = "INSERT INTO trainer (id, username, gender) VALUES ('" + trainer_id + "', '" + name + "', '" + gender + "')";
-                connection.Open();
+                Utility.connection.Open();
                 command.ExecuteNonQuery();
-                connection.Close();
+                Utility.connection.Close();
                 trainerAdded(null, null);
-                trainer_id = Utility.generateStaticID(trainer_id, "Class-");
+                trainer_id = Utility.generateStaticID(trainer_id, "T-");
                 trainerIDLbl.Text = trainer_id;
 
                 nameTxtBox.Text = "";
@@ -70,13 +69,12 @@ namespace _210_project
         {
             try
             {
-                SqlConnection connection = new SqlConnection(Utility.connection);
-                SqlCommand command = connection.CreateCommand();
+                SqlCommand command = Utility.connection.CreateCommand();
                 command.CommandType = CommandType.Text;
                 command.CommandText = "SELECT TOP 1 id FROM trainer ORDER BY id DESC";
-                connection.Open();
+                Utility.connection.Open();
                 command.ExecuteNonQuery();
-                connection.Close();
+                Utility.connection.Close();
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
                 DataSet ds = new DataSet();
                 adapter.Fill(ds, "id");

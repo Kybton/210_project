@@ -35,13 +35,12 @@ namespace _210_project
         {
             try
             {
-                SqlConnection connection = new SqlConnection(Utility.connection);
-                SqlCommand command = connection.CreateCommand();
+                SqlCommand command = Utility.connection.CreateCommand();
                 command.CommandType = CommandType.Text;
                 command.CommandText = "SELECT TOP 1 id FROM gym_classes ORDER BY id DESC";
-                connection.Open();
+                Utility.connection.Open();
                 command.ExecuteNonQuery();
-                connection.Close();
+                Utility.connection.Close();
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
                 DataSet ds = new DataSet();
                 adapter.Fill(ds, "id");
@@ -117,13 +116,12 @@ namespace _210_project
 
         private void insertBtn_Click(object sender, EventArgs e)
         {
-            SqlConnection connection = new SqlConnection(Utility.connection);
-            SqlCommand command = connection.CreateCommand();
+            SqlCommand command = Utility.connection.CreateCommand();
             command.CommandType = CommandType.Text;
             command.CommandText = "INSERT INTO gym_classes (id, title, category, number_of_session, start_date, end_date) VALUES ('" + classIDLbl.Text + "', '" + titleTxtBox.Text + "', '" + categoryTxtBox.Text + "', '" + nosTxtBox.Text + "', '" + startDateTimePicker.Value.ToString("MM/dd/yyy") + "', '" + endDateTimePicker.Value.ToString("MM/dd/yyy") + "')";
-            connection.Open();
+            Utility.connection.Open();
             command.ExecuteNonQuery();
-            connection.Close();
+            Utility.connection.Close();
 
             class_id = Utility.generateStaticID(class_id, "Class-");
             classIDLbl.Text = class_id;

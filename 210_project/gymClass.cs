@@ -13,21 +13,18 @@ namespace _210_project
             InitializeComponent();
         }
 
-        SqlConnection connection = new SqlConnection(Utility.connection);
-
         DataTable dt = new DataTable();
 
         private void dataShow()
         {
             try
             {
-                SqlConnection connection = new SqlConnection(Utility.connection);
-                SqlCommand command = connection.CreateCommand();
+                SqlCommand command = Utility.connection.CreateCommand();
                 command.CommandType = CommandType.Text;
                 command.CommandText = "SELECT * FROM gym_classes";
-                connection.Open();
+                Utility.connection.Open();
                 command.ExecuteNonQuery();
-                connection.Close();
+                Utility.connection.Close();
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
 
                 dt.Clear();
@@ -83,13 +80,12 @@ namespace _210_project
 
             if (classIDLbl.Text != "")
             {
-                SqlConnection connection = new SqlConnection(Utility.connection);
-                SqlCommand command = connection.CreateCommand();
+                SqlCommand command = Utility.connection.CreateCommand();
                 command.CommandType = CommandType.Text;
                 command.CommandText = "UPDATE gym_classes SET title = '" + titleTxtBox.Text + "', category = '" + categoryTxtBox.Text + "', number_of_session = '" + nosTxtBox.Text + "', start_date = '" + startDateTimePicker.Value.ToString("MM/dd/yyy") + "', end_date = '" + endDateTimePicker.Value.ToString("MM/dd/yyy") + "' WHERE id = '" + classIDLbl.Text + "'";
-                connection.Open();
+                Utility.connection.Open();
                 command.ExecuteNonQuery();
-                connection.Close();
+                Utility.connection.Close();
 
                 MessageBox.Show("Updated");
                 dataShow();
@@ -107,7 +103,7 @@ namespace _210_project
             }
 
 
-            SqlCommand command = connection.CreateCommand();
+            SqlCommand command = Utility.connection.CreateCommand();
             command.CommandType = CommandType.Text;
             command.CommandText = "SELECT * FROM gym_classes WHERE ";
 
@@ -130,9 +126,9 @@ namespace _210_project
                     break;
             }
 
-            connection.Open();
+            Utility.connection.Open();
             command.ExecuteNonQuery();
-            connection.Close();
+            Utility.connection.Close();
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             dt.Clear();
             adapter.Fill(dt);
@@ -175,12 +171,12 @@ namespace _210_project
                 var confirm = MessageBox.Show("The data will be deleted permanently.", "Confirm Delete", MessageBoxButtons.YesNo);
                 if (confirm == DialogResult.Yes)
                 {
-                    SqlCommand command = connection.CreateCommand();
+                    SqlCommand command = Utility.connection.CreateCommand();
                     command.CommandType = CommandType.Text;
                     command.CommandText = "DELETE FROM gym_classes WHERE id = '" + classIDLbl.Text + "'";
-                    connection.Open();
+                    Utility.connection.Open();
                     command.ExecuteNonQuery();
-                    connection.Close();
+                    Utility.connection.Close();
                     dataShow();
                     gymClassesDataGridView_Click(null, null);
                 }

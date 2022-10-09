@@ -1,0 +1,10 @@
+E:\210_project\admin_creation_210_project\bin\Debug\admin_creation_210_project.exe.config
+E:\210_project\admin_creation_210_project\bin\Debug\admin_creation_210_project.exe
+E:\210_project\admin_creation_210_project\bin\Debug\admin_creation_210_project.pdb
+E:\210_project\admin_creation_210_project\obj\Debug\admin_creation_210_project.csproj.AssemblyReference.cache
+E:\210_project\admin_creation_210_project\obj\Debug\admin_creation_210_project.csproj.SuggestedBindingRedirects.cache
+E:\210_project\admin_creation_210_project\obj\Debug\admin_creation_210_project.Properties.Resources.resources
+E:\210_project\admin_creation_210_project\obj\Debug\admin_creation_210_project.csproj.GenerateResource.cache
+E:\210_project\admin_creation_210_project\obj\Debug\admin_creation_210_project.csproj.CoreCompileInputs.cache
+E:\210_project\admin_creation_210_project\obj\Debug\admin_creation_210_project.exe
+E:\210_project\admin_creation_210_project\obj\Debug\admin_creation_210_project.pdb

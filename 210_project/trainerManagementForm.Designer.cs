@@ -32,18 +32,20 @@
             this.trainerDataGridView = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.trainerIDLbl = new System.Windows.Forms.Label();
-            this.nameTxtBox = new System.Windows.Forms.TextBox();
-            this.genderComBox = new System.Windows.Forms.ComboBox();
-            this.updateBtn = new System.Windows.Forms.Button();
+            this.genderRequiredLbl = new System.Windows.Forms.Label();
+            this.nameRequiredLbl = new System.Windows.Forms.Label();
+            this.addNewBtn = new System.Windows.Forms.Button();
             this.deleteBtn = new System.Windows.Forms.Button();
+            this.updateBtn = new System.Windows.Forms.Button();
+            this.genderComBox = new System.Windows.Forms.ComboBox();
+            this.nameTxtBox = new System.Windows.Forms.TextBox();
+            this.trainerIDLbl = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.addNewBtn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trainerDataGridView)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -86,6 +88,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.genderRequiredLbl);
+            this.groupBox2.Controls.Add(this.nameRequiredLbl);
             this.groupBox2.Controls.Add(this.addNewBtn);
             this.groupBox2.Controls.Add(this.deleteBtn);
             this.groupBox2.Controls.Add(this.updateBtn);
@@ -104,63 +108,37 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Control Box";
             // 
-            // label2
+            // genderRequiredLbl
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(51, 112);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 19);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Name";
+            this.genderRequiredLbl.AutoSize = true;
+            this.genderRequiredLbl.ForeColor = System.Drawing.Color.Red;
+            this.genderRequiredLbl.Location = new System.Drawing.Point(144, 205);
+            this.genderRequiredLbl.Name = "genderRequiredLbl";
+            this.genderRequiredLbl.Size = new System.Drawing.Size(0, 19);
+            this.genderRequiredLbl.TabIndex = 10;
             // 
-            // label3
+            // nameRequiredLbl
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(51, 178);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 19);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Gender";
+            this.nameRequiredLbl.AutoSize = true;
+            this.nameRequiredLbl.ForeColor = System.Drawing.Color.Red;
+            this.nameRequiredLbl.Location = new System.Drawing.Point(145, 137);
+            this.nameRequiredLbl.Name = "nameRequiredLbl";
+            this.nameRequiredLbl.Size = new System.Drawing.Size(0, 19);
+            this.nameRequiredLbl.TabIndex = 9;
             // 
-            // trainerIDLbl
+            // addNewBtn
             // 
-            this.trainerIDLbl.AutoSize = true;
-            this.trainerIDLbl.Location = new System.Drawing.Point(142, 50);
-            this.trainerIDLbl.Name = "trainerIDLbl";
-            this.trainerIDLbl.Size = new System.Drawing.Size(28, 19);
-            this.trainerIDLbl.TabIndex = 4;
-            this.trainerIDLbl.Text = "ID";
-            // 
-            // nameTxtBox
-            // 
-            this.nameTxtBox.Location = new System.Drawing.Point(146, 105);
-            this.nameTxtBox.Name = "nameTxtBox";
-            this.nameTxtBox.Size = new System.Drawing.Size(132, 26);
-            this.nameTxtBox.TabIndex = 5;
-            // 
-            // genderComBox
-            // 
-            this.genderComBox.FormattingEnabled = true;
-            this.genderComBox.Items.AddRange(new object[] {
-            "Male",
-            "Female"});
-            this.genderComBox.Location = new System.Drawing.Point(146, 170);
-            this.genderComBox.Name = "genderComBox";
-            this.genderComBox.Size = new System.Drawing.Size(132, 27);
-            this.genderComBox.TabIndex = 6;
-            // 
-            // updateBtn
-            // 
-            this.updateBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(124)))), ((int)(((byte)(88)))));
-            this.updateBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(124)))), ((int)(((byte)(88)))));
-            this.updateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.updateBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(204)))), ((int)(((byte)(132)))));
-            this.updateBtn.Location = new System.Drawing.Point(330, 164);
-            this.updateBtn.Name = "updateBtn";
-            this.updateBtn.Size = new System.Drawing.Size(75, 33);
-            this.updateBtn.TabIndex = 1;
-            this.updateBtn.Text = "Update";
-            this.updateBtn.UseVisualStyleBackColor = true;
+            this.addNewBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(124)))), ((int)(((byte)(88)))));
+            this.addNewBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(124)))), ((int)(((byte)(88)))));
+            this.addNewBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addNewBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(204)))), ((int)(((byte)(132)))));
+            this.addNewBtn.Location = new System.Drawing.Point(528, 164);
+            this.addNewBtn.Name = "addNewBtn";
+            this.addNewBtn.Size = new System.Drawing.Size(120, 33);
+            this.addNewBtn.TabIndex = 8;
+            this.addNewBtn.Text = "Add New";
+            this.addNewBtn.UseVisualStyleBackColor = true;
+            this.addNewBtn.Click += new System.EventHandler(this.addNewBtn_Click);
             // 
             // deleteBtn
             // 
@@ -174,6 +152,66 @@
             this.deleteBtn.TabIndex = 7;
             this.deleteBtn.Text = "Delete";
             this.deleteBtn.UseVisualStyleBackColor = true;
+            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
+            // 
+            // updateBtn
+            // 
+            this.updateBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(124)))), ((int)(((byte)(88)))));
+            this.updateBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(124)))), ((int)(((byte)(88)))));
+            this.updateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.updateBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(204)))), ((int)(((byte)(132)))));
+            this.updateBtn.Location = new System.Drawing.Point(330, 164);
+            this.updateBtn.Name = "updateBtn";
+            this.updateBtn.Size = new System.Drawing.Size(75, 33);
+            this.updateBtn.TabIndex = 1;
+            this.updateBtn.Text = "Update";
+            this.updateBtn.UseVisualStyleBackColor = true;
+            this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
+            // 
+            // genderComBox
+            // 
+            this.genderComBox.FormattingEnabled = true;
+            this.genderComBox.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this.genderComBox.Location = new System.Drawing.Point(146, 170);
+            this.genderComBox.Name = "genderComBox";
+            this.genderComBox.Size = new System.Drawing.Size(132, 27);
+            this.genderComBox.TabIndex = 6;
+            // 
+            // nameTxtBox
+            // 
+            this.nameTxtBox.Location = new System.Drawing.Point(146, 105);
+            this.nameTxtBox.Name = "nameTxtBox";
+            this.nameTxtBox.Size = new System.Drawing.Size(132, 26);
+            this.nameTxtBox.TabIndex = 5;
+            // 
+            // trainerIDLbl
+            // 
+            this.trainerIDLbl.AutoSize = true;
+            this.trainerIDLbl.Location = new System.Drawing.Point(142, 50);
+            this.trainerIDLbl.Name = "trainerIDLbl";
+            this.trainerIDLbl.Size = new System.Drawing.Size(28, 19);
+            this.trainerIDLbl.TabIndex = 4;
+            this.trainerIDLbl.Text = "ID";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(51, 178);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(62, 19);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Gender";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(51, 112);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(51, 19);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Name";
             // 
             // label5
             // 
@@ -213,20 +251,6 @@
             this.button1.TabIndex = 8;
             this.button1.Text = "Search";
             this.button1.UseVisualStyleBackColor = true;
-            // 
-            // addNewBtn
-            // 
-            this.addNewBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(124)))), ((int)(((byte)(88)))));
-            this.addNewBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(124)))), ((int)(((byte)(88)))));
-            this.addNewBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addNewBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(204)))), ((int)(((byte)(132)))));
-            this.addNewBtn.Location = new System.Drawing.Point(528, 164);
-            this.addNewBtn.Name = "addNewBtn";
-            this.addNewBtn.Size = new System.Drawing.Size(120, 33);
-            this.addNewBtn.TabIndex = 8;
-            this.addNewBtn.Text = "Add New";
-            this.addNewBtn.UseVisualStyleBackColor = true;
-            this.addNewBtn.Click += new System.EventHandler(this.addNewBtn_Click);
             // 
             // trainerManagementForm
             // 
@@ -270,5 +294,7 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button addNewBtn;
+        private System.Windows.Forms.Label genderRequiredLbl;
+        private System.Windows.Forms.Label nameRequiredLbl;
     }
 }

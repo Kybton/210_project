@@ -47,6 +47,8 @@ namespace _210_project
                 filled = false;
             }
 
+            // this code can be improved
+            // too many repetations and overloaded with unnecessary codes
             if ((string.IsNullOrEmpty(usernameTxtBox.Text) && string.IsNullOrEmpty(passwordTxtBox.Text)) || (usernameTxtBox.Text == "Username" && passwordTxtBox.Text == "Password"))
             {
                 usernameErrorLbl.Text = "*Username cannot be empty.";
@@ -84,13 +86,12 @@ namespace _210_project
             try
             {
                 DataTable dt = new DataTable();
-                SqlConnection connection = new SqlConnection(Utility.connection);
-                SqlCommand command = connection.CreateCommand();
+                SqlCommand command = Utility.connection.CreateCommand();
                 command.CommandType = CommandType.Text;
                 command.CommandText = "SELECT 1 FROM " + table + " WHERE username = '" + usernameTxtBox.Text + "' AND password = '" + passwordTxtBox.Text + "'";
-                connection.Open();
+                Utility.connection.Open();
                 command.ExecuteNonQuery();
-                connection.Close();
+                Utility.connection.Close();
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
                 adapter.Fill(dt);
 

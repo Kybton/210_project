@@ -148,14 +148,12 @@ namespace _210_project
 
             try
             {
-                // SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\minoa\OneDrive\Documents\201_project.mdf;Integrated Security=True;Connect Timeout=30");
-                SqlConnection connection = new SqlConnection(Utility.connection);
-                SqlCommand command = connection.CreateCommand();
+                SqlCommand command = Utility.connection.CreateCommand();
                 command.CommandType = CommandType.Text;
                 command.CommandText = "INSERT INTO member (id, name, password) VALUES ('" + userid + "', '" + name + "', '" + hashedPassword + "')";
-                connection.Open();
+                Utility.connection.Open();
                 command.ExecuteNonQuery();
-                connection.Close();
+                Utility.connection.Close();
             }
             catch (Exception errorMessage)
             {

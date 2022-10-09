@@ -9,7 +9,8 @@ namespace _210_project.Utilities
     public static class Utility
     {
 
-        public static string connection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\minoa\OneDrive\Documents\201_project.mdf;Integrated Security=True;Connect Timeout=30";
+        //public static string connection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\minoa\OneDrive\Documents\201_project.mdf;Integrated Security=True;Connect Timeout=30";
+        public static SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\minoa\OneDrive\Documents\201_project.mdf;Integrated Security=True;Connect Timeout=30");
 
         public static bool usernameAva(string username, string table)
         {
@@ -118,7 +119,7 @@ namespace _210_project.Utilities
             string id = "";
 
             for (int i = 0; i < last_id.Length; i++)
-                if (Char.IsDigit(last_id[i])) id += last_id[i];
+                if (char.IsDigit(last_id[i])) id += last_id[i];
 
             id = prefix + (int.Parse(id) + 1).ToString(padding);
 
