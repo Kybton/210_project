@@ -122,7 +122,7 @@ namespace _210_project
                     break;
 
                 case "Session":
-                    command.CommandText += "number_of_session BETWEEN " + (int.Parse(nosTxtBox.Text) - 5) + " AND " + (int.Parse(nosTxtBox.Text) + 5);
+                    command.CommandText += "number_of_session = '" + nosTxtBox.Text + "'";
                     break;
             }
 
@@ -155,12 +155,12 @@ namespace _210_project
         {
             if (dt.Rows.Count > 0)
             {
-                classIDLbl.Text = gymClassesDataGridView.CurrentRow.Cells[0].Value.ToString();
-                titleTxtBox.Text = gymClassesDataGridView.CurrentRow.Cells[1].Value.ToString();
-                categoryTxtBox.Text = gymClassesDataGridView.CurrentRow.Cells[2].Value.ToString();
-                nosTxtBox.Text = gymClassesDataGridView.CurrentRow.Cells[3].Value.ToString();
-                startDateTimePicker.Text = gymClassesDataGridView.CurrentRow.Cells[4].Value.ToString();
-                endDateTimePicker.Text = gymClassesDataGridView.CurrentRow.Cells[5].Value.ToString();
+                classIDLbl.Text = gymClassesDataGridView.CurrentRow.Cells[0].Value.ToString().Trim();
+                titleTxtBox.Text = gymClassesDataGridView.CurrentRow.Cells[1].Value.ToString().Trim();
+                categoryTxtBox.Text = gymClassesDataGridView.CurrentRow.Cells[2].Value.ToString().Trim();
+                nosTxtBox.Text = gymClassesDataGridView.CurrentRow.Cells[3].Value.ToString().Trim();
+                startDateTimePicker.Text = gymClassesDataGridView.CurrentRow.Cells[4].Value.ToString().Trim();
+                endDateTimePicker.Text = gymClassesDataGridView.CurrentRow.Cells[5].Value.ToString().Trim();
             }
         }
 

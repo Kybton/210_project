@@ -51,14 +51,14 @@ namespace _210_project
             // too many repetations and overloaded with unnecessary codes
             if ((string.IsNullOrEmpty(usernameTxtBox.Text) && string.IsNullOrEmpty(passwordTxtBox.Text)) || (usernameTxtBox.Text == "Username" && passwordTxtBox.Text == "Password"))
             {
-                usernameErrorLbl.Text = "*Username cannot be empty.";
+                usernameErrorLbl.Text = "*User ID cannot be empty.";
                 passwordErrorLbl.Text = "*Password cannot be empty.";
                 if (filled) filled = false;
             }
-            else if (string.IsNullOrEmpty(usernameTxtBox.Text) || usernameTxtBox.Text == "Username")
+            else if (string.IsNullOrEmpty(usernameTxtBox.Text) || usernameTxtBox.Text == "User ID")
             {
                 passwordErrorLbl.Text = "";
-                usernameErrorLbl.Text = "*Username cannot be empty.";
+                usernameErrorLbl.Text = "*User ID cannot be empty.";
                 if (filled) filled = false;
             }
             else if (string.IsNullOrEmpty(passwordTxtBox.Text) || passwordTxtBox.Text == "Password")
@@ -88,7 +88,7 @@ namespace _210_project
                 DataTable dt = new DataTable();
                 SqlCommand command = Utility.connection.CreateCommand();
                 command.CommandType = CommandType.Text;
-                command.CommandText = "SELECT 1 FROM " + table + " WHERE username = '" + usernameTxtBox.Text + "' AND password = '" + passwordTxtBox.Text + "'";
+                command.CommandText = "SELECT password FROM " + table + " WHERE id = '" + usernameTxtBox.Text + "'";
                 Utility.connection.Open();
                 command.ExecuteNonQuery();
                 Utility.connection.Close();
@@ -113,15 +113,27 @@ namespace _210_project
                     }
                     else if (table.Equals("member"))
                     {
-                        // show member form
-                        // check if the user has already filled out the required fields.
-                        // if not ask them to fill it out
-                        // if yes, skip to the main menu
+                        if (Utility.CheckPassword(dt.Rows[0][0].ToString(), passwordTxtBox.Text))
+                        {
+                            if (rememberCheckBox.Checked)
+                            {
+                                Settings.Default.username = usernameTxtBox.Text;
+                                Settings.Default.role = table;
+                                Settings.Default.Save();
+                            }
+                            memberMainMenu mf = new memberMainMenu();
+                            mf.ShowDialog();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Incorrect credentials.");
+                        }
                     }
                     else
                     {
                         // show trainer form
                     }
+                    Close();
                 }
                 else
                 {
@@ -162,7 +174,7 @@ namespace _210_project
 
         private void usernameTxtBox_Enter(object sender, EventArgs e)
         {
-            if (usernameTxtBox.Text == "Username")
+            if (usernameTxtBox.Text == "User ID")
             {
                 usernameTxtBox.Text = "";
                 usernameTxtBox.ForeColor = Color.Black;
@@ -174,7 +186,7 @@ namespace _210_project
             if (usernameTxtBox.Text == "")
             {
                 usernameTxtBox.ForeColor = Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(68)))), ((int)(((byte)(57)))));
-                usernameTxtBox.Text = "Username";
+                usernameTxtBox.Text = "User ID";
             }
         }
 

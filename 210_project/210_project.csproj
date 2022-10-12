@@ -12,6 +12,21 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -55,6 +70,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="addNewUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addNewUser.Designer.cs">
+      <DependentUpon>addNewUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="classAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,11 +112,35 @@
     <Compile Include="memberForm.Designer.cs">
       <DependentUpon>memberForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="memberProfileEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="memberProfileEdit.Designer.cs">
+      <DependentUpon>memberProfileEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="memberMainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="memberMainMenu.Designer.cs">
+      <DependentUpon>memberMainMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="memberRegisterForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="memberRegisterForm.Designer.cs">
       <DependentUpon>memberRegisterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="memberClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="memberClass.Designer.cs">
+      <DependentUpon>memberClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="memeberEnrollmentData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="memeberEnrollmentData.Designer.cs">
+      <DependentUpon>memeberEnrollmentData.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -112,6 +157,12 @@
     <Compile Include="trainerManagementForm.Designer.cs">
       <DependentUpon>trainerManagementForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="userChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="userChangePassword.Designer.cs">
+      <DependentUpon>userChangePassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="userManagement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +170,9 @@
       <DependentUpon>userManagement.cs</DependentUpon>
     </Compile>
     <Compile Include="Utility.cs" />
+    <EmbeddedResource Include="addNewUser.resx">
+      <DependentUpon>addNewUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="classAdd.resx">
       <DependentUpon>classAdd.cs</DependentUpon>
     </EmbeddedResource>
@@ -134,11 +188,23 @@
     <EmbeddedResource Include="adminMainMenuForm.resx">
       <DependentUpon>adminMainMenuForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="memberClass.resx">
+      <DependentUpon>memberClass.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="memberForm.resx">
       <DependentUpon>memberForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="memberProfileEdit.resx">
+      <DependentUpon>memberProfileEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="memberMainMenu.resx">
+      <DependentUpon>memberMainMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="memberRegisterForm.resx">
       <DependentUpon>memberRegisterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="memeberEnrollmentData.resx">
+      <DependentUpon>memeberEnrollmentData.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -154,6 +220,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="trainerManagementForm.resx">
       <DependentUpon>trainerManagementForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="userChangePassword.resx">
+      <DependentUpon>userChangePassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="userManagement.resx">
       <DependentUpon>userManagement.cs</DependentUpon>
@@ -171,6 +240,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="201_project.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="201_project_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>201_project.mdf</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

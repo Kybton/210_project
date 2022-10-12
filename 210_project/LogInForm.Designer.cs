@@ -104,7 +104,7 @@
             this.usernameTxtBox.Name = "usernameTxtBox";
             this.usernameTxtBox.Size = new System.Drawing.Size(326, 35);
             this.usernameTxtBox.TabIndex = 5;
-            this.usernameTxtBox.Text = "Username";
+            this.usernameTxtBox.Text = "User ID";
             this.usernameTxtBox.Enter += new System.EventHandler(this.usernameTxtBox_Enter);
             this.usernameTxtBox.Leave += new System.EventHandler(this.usernameTxtBox_Leave);
             // 

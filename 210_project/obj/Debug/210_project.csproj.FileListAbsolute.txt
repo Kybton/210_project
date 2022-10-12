@@ -32,3 +32,11 @@ E:\210_project\210_project\obj\Debug\_210_project.classAdd.resources
 E:\210_project\210_project\obj\Debug\_210_project.userManagement.resources
 E:\210_project\210_project\obj\Debug\_210_project.trainerManagementForm.resources
 E:\210_project\210_project\obj\Debug\_210_project.trainerAdd.resources
+E:\210_project\210_project\obj\Debug\_210_project.memberMainMenu.resources
+E:\210_project\210_project\obj\Debug\_210_project.memberClass.resources
+E:\210_project\210_project\obj\Debug\_210_project.memeberEnrollmentData.resources
+E:\210_project\210_project\obj\Debug\_210_project.memberProfileEdit.resources
+E:\210_project\210_project\bin\Debug\201_project.mdf
+E:\210_project\210_project\bin\Debug\201_project_log.ldf
+E:\210_project\210_project\obj\Debug\_210_project.userChangePassword.resources
+E:\210_project\210_project\obj\Debug\_210_project.addNewUser.resources

@@ -9,6 +9,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using _210_project.Properties;
+using System.Text.RegularExpressions;
+
 
 namespace _210_project
 {
@@ -20,6 +23,7 @@ namespace _210_project
             Closed += new System.EventHandler(memberRegisterForm_Close);
             MaximizeBox = false;
             KeyDown += new KeyEventHandler(memberRegisterForm_KeyDown);
+            genderComBox.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void memberRegisterForm_KeyDown(object sender, KeyEventArgs e)
@@ -120,47 +124,74 @@ namespace _210_project
             passwordTxtBox.PasswordChar = '\0';
         }
 
+        private bool validate()
+        {
+            string require = "* Require";
+            if (nameTxtBox.Text.Trim() == "") nameErrorLbl.Text = require;
+            else nameErrorLbl.Text = "";
+
+            if (passwordTxtBox.Text == "")
+            {
+                passwordStrLbl.ForeColor = Color.Red;
+                passwordStrLbl.Text = require;
+            }
+
+            if (phoneTxtBox.Text.Trim() == "") phoneErrorLbl.Text = require; else phoneErrorLbl.Text = "";
+
+            int now = int.Parse(DateTime.Today.ToString("yyyyMMdd"));
+            int dob = int.Parse(dobDateTimePicker.Value.ToString("yyyyMMdd"));
+            int age = (now - dob) / 10000;
+
+            if (age < 12) dobErrorLbl.Text = "* You cannot be under 12"; else dobErrorLbl.Text = "";
+
+            if (addressTxtBox.Text == "") addressErrorLbl.Text = require; else addressErrorLbl.Text = "";
+
+            if (genderComBox.Text == "") genderErrorLbl.Text = require; else genderErrorLbl.Text = "";
+
+            if (weightTxtBox.Text.Trim() == "") weightErrorLbl.Text = require; else weightErrorLbl.Text = "";
+
+            if (heightTxtBox.Text.Trim() == "") heightErrorLbl.Text = require; else heightErrorLbl.Text = "";
+
+            //return (nameTxtBox.Text != "" && passwordTxtBox.Text != "" && phoneTxtBox.Text != "" && age < 12 && addressTxtBox.Text != "" && genderComBox.Text != "" && weightTxtBox.Text != "" && heightTxtBox.Text != "");
+            return (nameTxtBox.Text != "" && passwordTxtBox.Text != "" && phoneTxtBox.Text != "" && age >= 12 && addressTxtBox.Text != "" && genderComBox.Text != "" && weightTxtBox.Text != "" && heightTxtBox.Text != "");
+        }
+
         private void signUpBtn_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(nameTxtBox.Text) && String.IsNullOrEmpty(passwordTxtBox.Text))
-            {
-                nameErrorLbl.Text = "*Name cannot be empty.";
-                passwordStrLbl.ForeColor = Color.Red;
-                passwordStrLbl.Text = "*Password cannot be empty.";
-                return;
-            }
-            else if (String.IsNullOrEmpty(nameTxtBox.Text))
-            {
-                nameErrorLbl.Text = "*Name cannot be empty.";
-                passwordStrLbl.Text = "";
-                return;
-            }
-            else if (String.IsNullOrEmpty(passwordTxtBox.Text))
-            {
-                passwordStrLbl.ForeColor = Color.Red;
-                passwordStrLbl.Text = "*Password cannot be empty.";
-                nameErrorLbl.Text = "";
-                return;
-            }
+            if (!validate()) return;
 
             string hashedPassword = Utility.HashPassword(passwordTxtBox.Text);
             string name = nameTxtBox.Text;
+            string phone = phoneTxtBox.Text;
+            string date_of_birth = dobDateTimePicker.Value.ToString("MM/dd/yyyy");
+            string address = addressTxtBox.Text;
+            string gender = genderComBox.Text;
+            string weight = weightTxtBox.Text;
+            string height = heightTxtBox.Text;
 
             try
             {
                 SqlCommand command = Utility.connection.CreateCommand();
                 command.CommandType = CommandType.Text;
-                command.CommandText = "INSERT INTO member (id, name, password) VALUES ('" + userid + "', '" + name + "', '" + hashedPassword + "')";
+                command.CommandText = "INSERT INTO member (id, username, password, phone, date_of_birth, address, gender, weight, height) VALUES ('" + userid + "', '" + name + "', '" + hashedPassword + "', '" + phone + "', '" + date_of_birth + "', '" + address + "', '" + gender + "', '" + weight + "', '" + height + "')";
                 Utility.connection.Open();
                 command.ExecuteNonQuery();
                 Utility.connection.Close();
+                MessageBox.Show("Sign Up Successful.");
+                this.Close();
             }
             catch (Exception errorMessage)
             {
                 MessageBox.Show(errorMessage.Message);
             }
 
-            MessageBox.Show("Sign Up Successful.");
+        }
+
+        private void phoneTxtBox_Leave(object sender, EventArgs e)
+        {
+            string strRegex = @"(^[0-9]{10,}$)|(^\+[0-9]{3}\s+[0-9]{8,}$)";
+            Regex reg = new Regex(strRegex);
+            if (!reg.IsMatch(phoneTxtBox.Text)) phoneErrorLbl.Text = "Invalid Format"; else phoneErrorLbl.Text = "";
         }
     }
 }

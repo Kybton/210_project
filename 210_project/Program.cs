@@ -21,7 +21,7 @@ namespace _210_project
             if (Settings.Default.username != string.Empty)
             {
                 if (Settings.Default.role.Equals("admin")) Application.Run(new formAdminMainMenu());
-                if (Settings.Default.role.Equals("user")) { /* open user form*/ };
+                if (Settings.Default.role.Equals("member")) Application.Run(new memberMainMenu());
             }
 
             Application.Run(new loginForm());

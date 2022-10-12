@@ -114,24 +114,53 @@ namespace _210_project
             }
         }
 
+        private bool validate()
+        {
+            if (startDateTimePicker.Value > endDateTimePicker.Value)
+            {
+                MessageBox.Show("Start date cannot be later than the end date.");
+                return false;
+            }
+            bool val = true;
+
+            if (titleTxtBox.Text == "" || titleTxtBox.Text == "Title") val = false;
+            if (categoryTxtBox.Text == "" || categoryTxtBox.Text == "Category") val = false;
+            if (nosTxtBox.Text == "" || nosTxtBox.Text == "Number of Session") val = false;
+
+            return val;
+        }
+
         private void insertBtn_Click(object sender, EventArgs e)
         {
-            SqlCommand command = Utility.connection.CreateCommand();
-            command.CommandType = CommandType.Text;
-            command.CommandText = "INSERT INTO gym_classes (id, title, category, number_of_session, start_date, end_date) VALUES ('" + classIDLbl.Text + "', '" + titleTxtBox.Text + "', '" + categoryTxtBox.Text + "', '" + nosTxtBox.Text + "', '" + startDateTimePicker.Value.ToString("MM/dd/yyy") + "', '" + endDateTimePicker.Value.ToString("MM/dd/yyy") + "')";
-            Utility.connection.Open();
-            command.ExecuteNonQuery();
-            Utility.connection.Close();
+            if (!validate())
+            {
+                MessageBox.Show("Fill out every fields.");
+                return;
+            }
 
-            class_id = Utility.generateStaticID(class_id, "Class-");
-            classIDLbl.Text = class_id;
-            titleTxtBox.ForeColor = grey;
-            titleTxtBox.Text = "Title";
-            categoryTxtBox.ForeColor = grey;
-            categoryTxtBox.Text = "Category";
-            nosTxtBox.ForeColor = grey;
-            nosTxtBox.Text = "Number of Session";
-            insertUpdate(null, null);
+            try
+            {
+                SqlCommand command = Utility.connection.CreateCommand();
+                command.CommandType = CommandType.Text;
+                command.CommandText = "INSERT INTO gym_classes (id, title, category, number_of_session, start_date, end_date) VALUES ('" + classIDLbl.Text + "', '" + titleTxtBox.Text + "', '" + categoryTxtBox.Text + "', '" + nosTxtBox.Text + "', '" + startDateTimePicker.Value.ToString("MM/dd/yyy") + "', '" + endDateTimePicker.Value.ToString("MM/dd/yyy") + "')";
+                Utility.connection.Open();
+                command.ExecuteNonQuery();
+                Utility.connection.Close();
+
+                class_id = Utility.generateStaticID(class_id, "Class-");
+                classIDLbl.Text = class_id;
+                titleTxtBox.ForeColor = grey;
+                titleTxtBox.Text = "Title";
+                categoryTxtBox.ForeColor = grey;
+                categoryTxtBox.Text = "Category";
+                nosTxtBox.ForeColor = grey;
+                nosTxtBox.Text = "Number of Session";
+                insertUpdate(null, null);
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message);
+            }
         }
     }
 }
