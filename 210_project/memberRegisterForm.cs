@@ -41,7 +41,6 @@ namespace _210_project
             Hide();
             loginForm loginForm = new loginForm();
             loginForm.ShowDialog();
-            Close();
         }
 
         System.Windows.Forms.Timer _typingTimer;

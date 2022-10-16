@@ -76,6 +76,18 @@
     <Compile Include="addNewUser.Designer.cs">
       <DependentUpon>addNewUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="adminEnrollManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adminEnrollManage.Designer.cs">
+      <DependentUpon>adminEnrollManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="adminNewEnroll.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adminNewEnroll.Designer.cs">
+      <DependentUpon>adminNewEnroll.cs</DependentUpon>
+    </Compile>
     <Compile Include="classAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,12 +117,6 @@
     </Compile>
     <Compile Include="adminMainMenuForm.Designer.cs">
       <DependentUpon>adminMainMenuForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="memberForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="memberForm.Designer.cs">
-      <DependentUpon>memberForm.cs</DependentUpon>
     </Compile>
     <Compile Include="memberProfileEdit.cs">
       <SubType>Form</SubType>
@@ -173,6 +179,12 @@
     <EmbeddedResource Include="addNewUser.resx">
       <DependentUpon>addNewUser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="adminEnrollManage.resx">
+      <DependentUpon>adminEnrollManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adminNewEnroll.resx">
+      <DependentUpon>adminNewEnroll.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="classAdd.resx">
       <DependentUpon>classAdd.cs</DependentUpon>
     </EmbeddedResource>
@@ -190,9 +202,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="memberClass.resx">
       <DependentUpon>memberClass.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="memberForm.resx">
-      <DependentUpon>memberForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="memberProfileEdit.resx">
       <DependentUpon>memberProfileEdit.cs</DependentUpon>
@@ -240,15 +249,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="201_project.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="201_project_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>201_project.mdf</DependentUpon>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">

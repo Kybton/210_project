@@ -107,6 +107,7 @@ namespace _210_project
                 Utility.connection.Open();
                 command.ExecuteNonQuery();
                 Utility.connection.Close();
+                MessageBox.Show("Updated");
                 showData();
             }
             catch (Exception error)
@@ -124,8 +125,10 @@ namespace _210_project
                 {
                     SqlCommand command = Utility.connection.CreateCommand();
                     command.CommandType = CommandType.Text;
-                    command.CommandText = "DELETE FROM trainer WHERE id = '" + trainerIDLbl.Text + "'";
                     Utility.connection.Open();
+                    command.CommandText = "DELETE FROM enrollmement_data WHERE trainer_id = '" + trainerIDLbl.Text + "'";
+                    command.ExecuteNonQuery();
+                    command.CommandText = "DELETE FROM trainer WHERE id = '" + trainerIDLbl.Text + "'";
                     command.ExecuteNonQuery();
                     Utility.connection.Close();
                     showData();
@@ -136,6 +139,34 @@ namespace _210_project
             {
                 MessageBox.Show(error.Message);
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (searchTxtBox.Text == "") return;
+
+            try
+            {
+                SqlCommand command = Utility.connection.CreateCommand();
+                command.CommandType = CommandType.Text;
+                command.CommandText = "SELECT id, username, gender FROM trainer WHERE username LIKE '%" + searchTxtBox.Text + "%'";
+                Utility.connection.Open();
+                command.ExecuteNonQuery();
+                Utility.connection.Close();
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                dt.Clear();
+                adapter.Fill(dt);
+                trainerDataGridView.DataSource = dt;
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message);
+            }
+        }
+
+        private void searchTxtBox_TextChanged(object sender, EventArgs e)
+        {
+            if (searchTxtBox.Text == "") showData();
         }
     }
 }

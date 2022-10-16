@@ -22,7 +22,6 @@ E:\210_project\210_project\obj\Debug\210_project.csproj.GenerateResource.cache
 E:\210_project\210_project\obj\Debug\210_project.csproj.CoreCompileInputs.cache
 E:\210_project\210_project\obj\Debug\210_project.exe
 E:\210_project\210_project\obj\Debug\210_project.pdb
-E:\210_project\210_project\obj\Debug\_210_project.memberForm.resources
 E:\210_project\210_project\obj\Debug\_210_project.loadingForm.resources
 E:\210_project\210_project\obj\Debug\_210_project.memberRegisterForm.resources
 E:\210_project\210_project\bin\Debug\Microsoft.VisualBasic.PowerPacks.Vs.dll
@@ -36,7 +35,7 @@ E:\210_project\210_project\obj\Debug\_210_project.memberMainMenu.resources
 E:\210_project\210_project\obj\Debug\_210_project.memberClass.resources
 E:\210_project\210_project\obj\Debug\_210_project.memeberEnrollmentData.resources
 E:\210_project\210_project\obj\Debug\_210_project.memberProfileEdit.resources
-E:\210_project\210_project\bin\Debug\201_project.mdf
-E:\210_project\210_project\bin\Debug\201_project_log.ldf
 E:\210_project\210_project\obj\Debug\_210_project.userChangePassword.resources
 E:\210_project\210_project\obj\Debug\_210_project.addNewUser.resources
+E:\210_project\210_project\obj\Debug\_210_project.adminEnrollManage.resources
+E:\210_project\210_project\obj\Debug\_210_project.adminNewEnroll.resources

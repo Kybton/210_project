@@ -8,3 +8,4 @@ E:\210_project\admin_creation_210_project\obj\Debug\admin_creation_210_project.c
 E:\210_project\admin_creation_210_project\obj\Debug\admin_creation_210_project.csproj.CoreCompileInputs.cache
 E:\210_project\admin_creation_210_project\obj\Debug\admin_creation_210_project.exe
 E:\210_project\admin_creation_210_project\obj\Debug\admin_creation_210_project.pdb
+E:\210_project\admin_creation_210_project\obj\Debug\admin_creation_210_project.createAdmin.resources

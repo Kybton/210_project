@@ -43,8 +43,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.searchTxtBox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trainerDataGridView)).BeginInit();
@@ -218,26 +217,19 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("SimSun", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(206)))), ((int)(((byte)(209)))));
-            this.label5.Location = new System.Drawing.Point(146, 268);
+            this.label5.Location = new System.Drawing.Point(257, 265);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(61, 15);
             this.label5.TabIndex = 3;
             this.label5.Text = "Search";
             // 
-            // textBox2
+            // searchTxtBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(224, 265);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(185, 22);
-            this.textBox2.TabIndex = 8;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(426, 265);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(95, 24);
-            this.comboBox2.TabIndex = 9;
+            this.searchTxtBox.Location = new System.Drawing.Point(335, 262);
+            this.searchTxtBox.Name = "searchTxtBox";
+            this.searchTxtBox.Size = new System.Drawing.Size(185, 22);
+            this.searchTxtBox.TabIndex = 8;
+            this.searchTxtBox.TextChanged += new System.EventHandler(this.searchTxtBox_TextChanged);
             // 
             // button1
             // 
@@ -245,12 +237,13 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("SimSun", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(204)))), ((int)(((byte)(132)))));
-            this.button1.Location = new System.Drawing.Point(537, 259);
+            this.button1.Location = new System.Drawing.Point(536, 257);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 33);
             this.button1.TabIndex = 8;
             this.button1.Text = "Search";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // trainerManagementForm
             // 
@@ -259,8 +252,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(56)))), ((int)(((byte)(84)))));
             this.ClientSize = new System.Drawing.Size(818, 546);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.searchTxtBox);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -290,8 +282,7 @@
         private System.Windows.Forms.ComboBox genderComBox;
         private System.Windows.Forms.Button deleteBtn;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.TextBox searchTxtBox;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button addNewBtn;
         private System.Windows.Forms.Label genderRequiredLbl;

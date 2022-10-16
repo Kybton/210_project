@@ -11,7 +11,7 @@ namespace _210_project.Utilities
     {
 
         //public static string connection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\minoa\OneDrive\Documents\201_project.mdf;Integrated Security=True;Connect Timeout=30";
-        public static SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=E:\210_project\210_project\201_project.mdf;Integrated Security=True");
+        public static SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\minoa\OneDrive\Documents\201_project.mdf;Integrated Security=True;Connect Timeout=30");
 
         public static bool usernameAva(string username, string table)
         {
@@ -125,13 +125,6 @@ namespace _210_project.Utilities
             id = prefix + (int.Parse(id) + 1).ToString(padding);
 
             return id;
-        }
-
-        public static bool checkAge(DateTime large)
-        {
-            int lar = int.Parse(large.ToString("yyyyMMdd"));
-            int sma = int.Parse(DateTime.Today.ToString("yyyyMMdd"));
-            return ((lar - sma / 10000) < 12);
         }
     }
 }

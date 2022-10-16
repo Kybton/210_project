@@ -64,5 +64,10 @@ namespace _210_project
         {
             openChildForm(new trainerManagementForm());
         }
+
+        private void enrollmentBtn_Click(object sender, EventArgs e)
+        {
+            openChildForm(new adminEnrollManage());
+        }
     }
 }

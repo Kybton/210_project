@@ -173,8 +173,10 @@ namespace _210_project
                 {
                     SqlCommand command = Utility.connection.CreateCommand();
                     command.CommandType = CommandType.Text;
-                    command.CommandText = "DELETE FROM gym_classes WHERE id = '" + classIDLbl.Text + "'";
                     Utility.connection.Open();
+                    command.CommandText = "DELETE FROM enrollmement_data WHERE class_id = '" + classIDLbl.Text + "'";
+                    command.ExecuteNonQuery();
+                    command.CommandText = "DELETE FROM gym_classes WHERE id = '" + classIDLbl.Text + "'";
                     command.ExecuteNonQuery();
                     Utility.connection.Close();
                     dataShow();

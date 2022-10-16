@@ -32,16 +32,16 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.unenrollBtn = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.trainerComBox = new System.Windows.Forms.ComboBox();
-            this.enrollIDLbl = new System.Windows.Forms.Label();
+            this.totalEnrollLbl = new System.Windows.Forms.Label();
+            this.updateBtn = new System.Windows.Forms.Button();
+            this.trainerIDLbl = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.titleLbl = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.trainerIDLbl = new System.Windows.Forms.Label();
-            this.updateBtn = new System.Windows.Forms.Button();
-            this.totalEnrollLbl = new System.Windows.Forms.Label();
+            this.enrollIDLbl = new System.Windows.Forms.Label();
+            this.trainerComBox = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.enrolDataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -108,31 +108,55 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Control Box";
             // 
-            // label1
+            // totalEnrollLbl
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(37, 58);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 19);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Enroll ID";
+            this.totalEnrollLbl.AutoSize = true;
+            this.totalEnrollLbl.Font = new System.Drawing.Font("Book Antiqua", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalEnrollLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(235)))), ((int)(((byte)(251)))));
+            this.totalEnrollLbl.Location = new System.Drawing.Point(616, 37);
+            this.totalEnrollLbl.Name = "totalEnrollLbl";
+            this.totalEnrollLbl.Size = new System.Drawing.Size(37, 22);
+            this.totalEnrollLbl.TabIndex = 14;
+            this.totalEnrollLbl.Text = "aaa";
             // 
-            // trainerComBox
+            // updateBtn
             // 
-            this.trainerComBox.FormattingEnabled = true;
-            this.trainerComBox.Location = new System.Drawing.Point(446, 117);
-            this.trainerComBox.Name = "trainerComBox";
-            this.trainerComBox.Size = new System.Drawing.Size(121, 27);
-            this.trainerComBox.TabIndex = 4;
-            this.trainerComBox.SelectedIndexChanged += new System.EventHandler(this.trainerComBox_SelectedIndexChanged);
+            this.updateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.updateBtn.Font = new System.Drawing.Font("SimSun", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.updateBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(206)))), ((int)(((byte)(209)))));
+            this.updateBtn.Location = new System.Drawing.Point(620, 168);
+            this.updateBtn.Name = "updateBtn";
+            this.updateBtn.Size = new System.Drawing.Size(102, 42);
+            this.updateBtn.TabIndex = 13;
+            this.updateBtn.Text = "Update";
+            this.updateBtn.UseVisualStyleBackColor = true;
+            this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
             // 
-            // enrollIDLbl
+            // trainerIDLbl
             // 
-            this.enrollIDLbl.AutoSize = true;
-            this.enrollIDLbl.Location = new System.Drawing.Point(143, 58);
-            this.enrollIDLbl.Name = "enrollIDLbl";
-            this.enrollIDLbl.Size = new System.Drawing.Size(0, 19);
-            this.enrollIDLbl.TabIndex = 5;
+            this.trainerIDLbl.AutoSize = true;
+            this.trainerIDLbl.Location = new System.Drawing.Point(442, 58);
+            this.trainerIDLbl.Name = "trainerIDLbl";
+            this.trainerIDLbl.Size = new System.Drawing.Size(0, 19);
+            this.trainerIDLbl.TabIndex = 12;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(302, 58);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(84, 19);
+            this.label8.TabIndex = 11;
+            this.label8.Text = "Trainer ID";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(279, 120);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(107, 19);
+            this.label7.TabIndex = 10;
+            this.label7.Text = "Trainer Name";
             // 
             // titleLbl
             // 
@@ -151,55 +175,31 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Title";
             // 
-            // label7
+            // enrollIDLbl
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(279, 120);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(107, 19);
-            this.label7.TabIndex = 10;
-            this.label7.Text = "Trainer Name";
+            this.enrollIDLbl.AutoSize = true;
+            this.enrollIDLbl.Location = new System.Drawing.Point(143, 58);
+            this.enrollIDLbl.Name = "enrollIDLbl";
+            this.enrollIDLbl.Size = new System.Drawing.Size(0, 19);
+            this.enrollIDLbl.TabIndex = 5;
             // 
-            // label8
+            // trainerComBox
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(302, 58);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(84, 19);
-            this.label8.TabIndex = 11;
-            this.label8.Text = "Trainer ID";
+            this.trainerComBox.FormattingEnabled = true;
+            this.trainerComBox.Location = new System.Drawing.Point(446, 117);
+            this.trainerComBox.Name = "trainerComBox";
+            this.trainerComBox.Size = new System.Drawing.Size(121, 27);
+            this.trainerComBox.TabIndex = 4;
+            this.trainerComBox.SelectedIndexChanged += new System.EventHandler(this.trainerComBox_SelectedIndexChanged);
             // 
-            // trainerIDLbl
+            // label1
             // 
-            this.trainerIDLbl.AutoSize = true;
-            this.trainerIDLbl.Location = new System.Drawing.Point(442, 58);
-            this.trainerIDLbl.Name = "trainerIDLbl";
-            this.trainerIDLbl.Size = new System.Drawing.Size(0, 19);
-            this.trainerIDLbl.TabIndex = 12;
-            // 
-            // updateBtn
-            // 
-            this.updateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.updateBtn.Font = new System.Drawing.Font("SimSun", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.updateBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(206)))), ((int)(((byte)(209)))));
-            this.updateBtn.Location = new System.Drawing.Point(620, 168);
-            this.updateBtn.Name = "updateBtn";
-            this.updateBtn.Size = new System.Drawing.Size(102, 42);
-            this.updateBtn.TabIndex = 13;
-            this.updateBtn.Text = "Update";
-            this.updateBtn.UseVisualStyleBackColor = true;
-            this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
-            // 
-            // totalEnrollLbl
-            // 
-            this.totalEnrollLbl.AutoSize = true;
-            this.totalEnrollLbl.Font = new System.Drawing.Font("Book Antiqua", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalEnrollLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(235)))), ((int)(((byte)(251)))));
-            this.totalEnrollLbl.Location = new System.Drawing.Point(616, 37);
-            this.totalEnrollLbl.Name = "totalEnrollLbl";
-            this.totalEnrollLbl.Size = new System.Drawing.Size(37, 22);
-            this.totalEnrollLbl.TabIndex = 14;
-            this.totalEnrollLbl.Text = "aaa";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(37, 58);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(74, 19);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Enroll ID";
             // 
             // memeberEnrollmentData
             // 

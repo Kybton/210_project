@@ -79,7 +79,7 @@ namespace _210_project
             {
                 SqlCommand command = Utility.connection.CreateCommand();
                 command.CommandType = CommandType.Text;
-                command.CommandText = "SELECT * FROM member WHERE username LIKE '%" + searchTxtBox.Text + "%'";
+                command.CommandText = "SELECT id as 'User ID', username as Name, phone, date_of_birth as Birthday, address, gender, weight, height FROM member WHERE username LIKE '%" + searchTxtBox.Text + "%'";
                 Utility.connection.Open();
                 command.ExecuteNonQuery();
                 Utility.connection.Close();

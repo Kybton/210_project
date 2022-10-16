@@ -47,31 +47,19 @@ namespace _210_project
                 filled = false;
             }
 
-            // this code can be improved
-            // too many repetations and overloaded with unnecessary codes
-            if ((string.IsNullOrEmpty(usernameTxtBox.Text) && string.IsNullOrEmpty(passwordTxtBox.Text)) || (usernameTxtBox.Text == "Username" && passwordTxtBox.Text == "Password"))
+            if (usernameTxtBox.Text == "" || usernameTxtBox.Text == "User ID")
             {
                 usernameErrorLbl.Text = "*User ID cannot be empty.";
+                if (filled) filled = false;
+            }
+            else usernameErrorLbl.Text = "";
+
+            if (passwordTxtBox.Text == "" || passwordTxtBox.Text == "Password")
+            {
                 passwordErrorLbl.Text = "*Password cannot be empty.";
                 if (filled) filled = false;
             }
-            else if (string.IsNullOrEmpty(usernameTxtBox.Text) || usernameTxtBox.Text == "User ID")
-            {
-                passwordErrorLbl.Text = "";
-                usernameErrorLbl.Text = "*User ID cannot be empty.";
-                if (filled) filled = false;
-            }
-            else if (string.IsNullOrEmpty(passwordTxtBox.Text) || passwordTxtBox.Text == "Password")
-            {
-                usernameErrorLbl.Text = "";
-                passwordErrorLbl.Text = "*Password cannot be empty.";
-                if (filled) filled = false;
-            }
-            else
-            {
-                passwordErrorLbl.Text = "";
-                usernameErrorLbl.Text = "";
-            }
+            else passwordErrorLbl.Text = "";
 
             return (filled, role);
         }
@@ -97,32 +85,20 @@ namespace _210_project
 
                 if (dt.Rows.Count > 0)
                 {
-                    Hide();
-
-                    if (rememberCheckBox.Checked)
-                    {
-                        Settings.Default.username = usernameTxtBox.Text;
-                        Settings.Default.role = table;
-                        Settings.Default.Save();
-                    }
-
                     if (table.Equals("admin"))
-                    {
-                        formAdminMainMenu mainMenuForm = new formAdminMainMenu();
-                        mainMenuForm.ShowDialog();
-                    }
-                    else if (table.Equals("member"))
                     {
                         if (Utility.CheckPassword(dt.Rows[0][0].ToString(), passwordTxtBox.Text))
                         {
+                            Hide();
                             if (rememberCheckBox.Checked)
                             {
                                 Settings.Default.username = usernameTxtBox.Text;
                                 Settings.Default.role = table;
                                 Settings.Default.Save();
                             }
-                            memberMainMenu mf = new memberMainMenu();
-                            mf.ShowDialog();
+
+                            formAdminMainMenu mainMenuForm = new formAdminMainMenu();
+                            mainMenuForm.ShowDialog();
                         }
                         else
                         {
@@ -131,9 +107,24 @@ namespace _210_project
                     }
                     else
                     {
-                        // show trainer form
+                        if (Utility.CheckPassword(dt.Rows[0][0].ToString(), passwordTxtBox.Text))
+                        {
+                            Hide();
+                            if (rememberCheckBox.Checked)
+                            {
+                                Settings.Default.username = usernameTxtBox.Text;
+                                Settings.Default.role = table;
+                                Settings.Default.Save();
+                            }
+
+                            memberMainMenu mf = new memberMainMenu();
+                            mf.ShowDialog();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Incorrect credentials.");
+                        }
                     }
-                    Close();
                 }
                 else
                 {
